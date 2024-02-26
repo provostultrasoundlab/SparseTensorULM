@@ -1,0 +1,26 @@
+{
+    "n_epochs": [
+        150,
+        150
+
+    ],
+    "saver": {
+        "path": "run_deepST_thresh_001"
+    },
+    "data_loaders": {
+        "train_params": {
+            "batch_size": 8,
+            "num_workers": 6
+        },
+        "val_params": {
+            "batch_size": 8,
+            "num_workers": 6
+        }
+    },
+    "data": {
+        "data_path": "dataset_2D_22_09_2023",
+        "thresholdSparsifier":0.01
+            }
+        
+    
+}

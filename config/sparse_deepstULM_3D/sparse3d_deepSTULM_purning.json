@@ -1,0 +1,67 @@
+{
+  "n_epochs": [20
+],
+  "refresh_factor": 1,
+  "ndim": 4,
+  "model": {
+    "unet": true,
+    "transition_1": {
+      "inChans": 32,
+      "outChans": 16,
+      "nConvs": 2
+    },
+    "hr_transition": {
+      "inChans": 16,
+      "nConvs":3
+    },
+    "transition_2": {
+      "inChans": 16,
+      "nConvs": 2 
+    },
+    "output_transition": {
+      "inChans": 16,
+      "nConvs": 2
+    },
+    "pruning": true,
+    "deep_supervision": true,
+    "multiphase": false,
+    "n_base_channels": 32,
+    "dim":4
+},
+  "training": {
+    "optimizer": {
+      "lr": 0.05,
+      "weight_decay": 0
+    },
+    "scheduler": {
+      "gamma": 0.1,
+      "milestones": [15,17]
+    },
+    "save_path": "runs_3D_sparse_pruning_20_12"
+
+  },
+  "data_loaders": {
+    "train_params": {
+      "batch_size": 2,
+      "num_workers": 4
+    },
+    "val_params": {
+      "batch_size": 2,
+      "num_workers": 4
+    }
+  },
+  "data_loaders_finetune": {
+    "train_params": {
+      "batch_size": 4,
+      "num_workers": 4
+    },
+    "val_params": {
+      "batch_size": 4,
+      "num_workers": 4
+    }
+  },
+  "data": {
+        "data_path": "dataset_3D_26_09_2023",
+        "thresholdSparsifier":  0.25
+  }
+}

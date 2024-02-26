@@ -1,0 +1,74 @@
+{
+    "n_epochs": [
+        50
+    ],
+    "refresh_factor": 1,
+    "ndim": 3,
+    "model": {
+            "dim": 3,
+            "normalization": "instance",
+            "int_activation_fn": "gelu",
+            "conv_blocks": [
+                {
+                    "n_chan_in": 2,
+                    "n_chan_out": 16,
+                    "n_chan_middle": 32,
+                    "kernel_size": 3,
+                    "maxpool": [
+                        1,
+                        2
+                    ]
+                },
+                {
+                    "n_chan_in": 16,
+                    "n_chan_out": 16,
+                    "n_chan_middle": 32,
+                    "kernel_size": 3
+                },
+                {
+                    "n_chan_in": 16,
+                    "n_chan_out": 16,
+                    "n_chan_middle": 32,
+                    "kernel_size": 3
+                },
+                {
+                    "n_chan_in": 16,
+                    "n_chan_out": 16,
+                    "n_chan_middle": 32,
+                    "kernel_size": 3
+                }
+            ]
+        }
+    ,
+    "training": {
+        "optimizer": {
+            "lr": 0.005,
+            "weight_decay": 1e-05
+        },
+        "scheduler": {
+            
+              "gamma": 0.1,
+              "milestones": [
+                25,
+                40
+              ]
+            
+          },
+        "save_path": "runs_2D_5MB_26_09_2023"
+        
+    },
+    "data_loaders": {
+        "train_params": {
+            "batch_size": 8,
+            "num_workers": 3
+        },
+        "val_params": {
+            "batch_size": 8,
+            "num_workers": 3
+        }
+    },
+  "data": {
+            "data_path": "dataset_2D_22_09_2023"
+      }
+    
+}
