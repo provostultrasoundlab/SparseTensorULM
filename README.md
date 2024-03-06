@@ -61,7 +61,7 @@ In order to monitor the training you can set up comet-ml:
 
 ## Dataset 
 
-You can download the 2D dataset: 
+You can download the 2D dataset: [Zenodo](https://zenodo.org/records/10711657)
 
 The 3D training set is available on demand. The weights for the network and the test set are available : 
 
